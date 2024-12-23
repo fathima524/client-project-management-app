@@ -1,0 +1,24 @@
+<body style="background-color: black;">
+<app-navbar></app-navbar>
+<div class="client-edit">
+    <h2>Edit Client</h2>
+    <div *ngIf="client">
+      <form (ngSubmit)="onSubmit()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="client.name" name="name" required />
+  
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" [(ngModel)]="client.contact" name="contact" required />
+  
+        <label for="summary">Summary:</label>
+        <textarea id="summary" [(ngModel)]="client.summary" name="summary"></textarea>
+  
+        <button type="submit">Save</button>
+      </form>
+    </div>
+    <div *ngIf="!client">
+      <p>Loading client details...</p>
+    </div>
+  </div>
+<app-footer></app-footer>
+</body>

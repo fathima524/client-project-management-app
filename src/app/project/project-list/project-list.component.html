@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="project-list" style="background-color: black;">
+  <h2>Project List</h2>
+
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search projects by name..." (input)="filterProjects()" />
+  </div>
+
+  <div class="add-project">
+    <h3>Add New Project</h3>
+    <input type="text" [(ngModel)]="newProjectName" placeholder="Enter project name" />
+    <input type="text" [(ngModel)]="newProjectDeadline" placeholder="Enter project deadline" />
+    <input type="text" [(ngModel)]="newProjectSummary" placeholder="Enter project summary" />
+    <br /><br />
+    <button (click)="addProject()">Add Project</button>
+  </div>
+
+  <div class="project-card-container">
+    <div class="project-card" *ngFor="let project of filteredProjects">
+      <div class="card">
+        <h3>{{ project.name }}</h3>
+        <p><strong>Deadline:</strong> {{ project.deadline }}</p>
+        <p><strong>Summary:</strong> {{ project.summary }}</p><br><br><br>
+
+        <button (click)="viewProject(project.id)">View</button>
+        <button (click)="editProject(project.id)">Edit</button>
+        <button (click)="deleteProject(project.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer>
+</app-footer>

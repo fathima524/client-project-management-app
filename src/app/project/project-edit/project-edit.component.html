@@ -1,0 +1,18 @@
+<body style="background-color: black;">
+<app-navbar></app-navbar>
+<div class="project-edit" >
+  <h2>Edit Project</h2>
+  <div *ngIf="project">
+    <form (ngSubmit)="onSubmit()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="project.name" name="name" required>
+      <label for="deadline">Deadline:</label>
+      <input type="text" id="deadline" [(ngModel)]="project.deadline" name="deadline" required>
+      <label for="summary">Summary:</label>
+      <input type="text" id="summary" [(ngModel)]="project.summary" name="summary" required>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>
+</body>

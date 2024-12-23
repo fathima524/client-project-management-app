@@ -1,0 +1,84 @@
+:root {
+    --primary-color: #2196f3;
+    --primary-hover: #1976d2;
+    --danger-color: #f44336;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --background-dark: #121212;
+    --background-card: #1e1e1e;
+    --background-hover: #2c2c2c;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --border-color: #333333;
+  }
+  
+  body {
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .header h2 {
+    color: var(--text-primary);
+    margin: 0;
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .status-badge.scheduled {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .status-badge.completed {
+    background-color: var(--success-color);
+    color: white;
+  }
+  
+  .status-badge.cancelled {
+    background-color: var(--danger-color);
+    color: white;
+  }
+  
+  .status-badge.pending {
+    background-color: var(--warning-color);
+    color: black;
+  }
+  

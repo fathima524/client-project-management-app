@@ -1,0 +1,257 @@
+.calendar-container {
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #e0e0e0;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #e0e0e0;
+}
+
+.nav-button:hover {
+  background-color: #333333;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.weekday-header {
+  text-align: center;
+  font-weight: 500;
+  padding: 10px;
+  color: #b0b0b0;
+  background-color: #2a2a2a;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  padding: 8px;
+  border: 1px solid #333333;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #242424;
+}
+
+.date-number {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: #e0e0e0;
+}
+
+.today {
+  background-color: #1a3045;
+  border-color: #0077ee;
+}
+
+.selected {
+  background-color: #0077ee;
+  color: white;
+}
+
+.other-month {
+  opacity: 0.3;
+}
+
+.meeting-indicators {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+}
+
+.meeting-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #0077ee;
+}
+
+.meeting-dot.completed {
+  background-color: #2ea043;
+}
+
+.meeting-dot.cancelled {
+  background-color: #e5534b;
+}
+
+.selected-date-info {
+  border-top: 1px solid #333333;
+  padding-top: 20px;
+}
+
+.meetings-list {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meeting-card {
+  display: flex;
+  padding: 15px;
+  background-color: #2a2a2a;
+  border-radius: 6px;
+  border-left: 4px solid #0077ee;
+}
+
+.meeting-time {
+  min-width: 120px;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+.meeting-content {
+  flex-grow: 1;
+}
+
+.meeting-content h4 {
+  margin: 0 0 5px 0;
+  color: #ffffff;
+}
+
+.meeting-content p {
+  margin: 0;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.status-badge.scheduled {
+  background-color: #1a3045;
+  color: #0077ee;
+}
+
+.status-badge.completed {
+  background-color: #1b2a1e;
+  color: #2ea043;
+}
+
+.status-badge.cancelled {
+  background-color: #2d1f1f;
+  color: #e5534b;
+}
+
+.add-meeting-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #0077ee;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.add-meeting-btn:hover {
+  background-color: #0066cc;
+}
+
+.add-meeting-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  width: 90%;
+  max-width: 500px;
+  z-index: 1000;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #e0e0e0;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  background-color: #242424;
+  color: #e0e0e0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0077ee;
+  outline: none;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.form-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-buttons button[type="submit"] {
+  background-color: #0077ee;
+  color: white;
+}
+
+.form-buttons button[type="button"] {
+  background-color: #333333;
+  color: #e0e0e0;
+}
+
+.form-buttons button:hover {
+  opacity: 0.9;
+}
+
+.form-buttons button:disabled {
+  background-color: #333333;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}

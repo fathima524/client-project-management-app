@@ -1,0 +1,108 @@
+<body style="background-color: black;">
+
+  <app-navbar></app-navbar>
+
+<div class="calendar-container" style="background-color: black;">
+    <!-- Calendar Header -->
+    <div class="calendar-header">
+      <button class="nav-button" (click)="previousMonth()">&lt;</button>
+      <h2>{{ formatDate(currentMonth) }}</h2>
+      <button class="nav-button" (click)="nextMonth()">&gt;</button>
+    </div>
+  
+    <!-- Calendar Grid -->
+    <div class="calendar-grid">
+      <!-- Weekday Headers -->
+      <div class="weekday-header" *ngFor="let day of weekDays">
+        {{ day }}
+      </div>
+  
+      <!-- Calendar Days -->
+      <div class="calendar-day" 
+           *ngFor="let date of calendarDays"
+           [class.today]="isToday(date)"
+           [class.selected]="selectedDate === date"
+           [class.other-month]="!isCurrentMonth(date)"
+           (click)="selectDate(date)">
+        <span class="date-number">{{ date.getDate() }}</span>
+        <!-- Meeting Indicators -->
+        <div class="meeting-indicators">
+          <span class="meeting-dot" 
+                *ngFor="let meeting of getMeetingsForDay(date)"
+                [class]="meeting.status">
+          </span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Selected Date Meetings -->
+    <div class="selected-date-info" *ngIf="selectedDate">
+      <h3>Meetings for {{ selectedDate | date:'mediumDate' }}</h3>
+      
+      <!-- Meeting List -->
+      <div class="meetings-list">
+        <div class="meeting-card" *ngFor="let meeting of getMeetingsForDay(selectedDate)">
+          <div class="meeting-time">
+            {{ meeting.startTime }} - {{ meeting.endTime }}
+          </div>
+          <div class="meeting-content">
+            <h4>{{ meeting.title }}</h4>
+            <p>Client: {{ meeting.clientName }}</p>
+            <p>Project: {{ meeting.projectName }}</p>
+            <span class="status-badge" [class]="meeting.status">
+              {{ meeting.status }}
+            </span>
+          </div>
+        </div>
+        
+        <!-- Add Meeting Button -->
+        <button class="add-meeting-btn" (click)="toggleAddMeetingForm()">
+          + Add Meeting
+        </button>
+      </div>
+    </div>
+  
+    <!-- Simple Add Meeting Form -->
+    <div class="add-meeting-form" *ngIf="showAddMeetingForm">
+      <form #meetingForm="ngForm" (ngSubmit)="addMeeting(meetingForm.value)">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" ngModel required>
+        </div>
+        
+        <div class="form-group">
+          <label for="startTime">Start Time</label>
+          <input type="time" id="startTime" name="startTime" ngModel required>
+        </div>
+        
+        <div class="form-group">
+          <label for="endTime">End Time</label>
+          <input type="time" id="endTime" name="endTime" ngModel required>
+        </div>
+        
+        <div class="form-group">
+          <label for="clientName">Client</label>
+          <input type="text" id="clientName" name="clientName" ngModel required>
+        </div>
+        
+        <div class="form-group">
+          <label for="projectName">Project</label>
+          <input type="text" id="projectName" name="projectName" ngModel required>
+        </div>
+        
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" ngModel></textarea>
+        </div>
+        
+        <div class="form-buttons">
+          <button type="submit" [disabled]="!meetingForm.valid">Save</button>
+          <button type="button" (click)="toggleAddMeetingForm()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<app-footer></app-footer>
+
+</body>  

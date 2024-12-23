@@ -1,0 +1,181 @@
+/* Body background and global styles */
+body {
+  background-color: #1e1e2f; /* Dark grey background */
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Container styling for the meeting list */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Meeting list header styles */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.list-header h2 {
+  color: white;
+}
+
+/* Table container styling */
+.table-container {
+  background-color: rgba(30, 30, 47, 0.9); /* Darker semi-transparent background */
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for header */
+}
+
+/* Actions column buttons */
+.actions-cell .action-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.action-btn:hover {
+  color: #00f7ff; /* Blue accent on hover */
+}
+
+/* Status badge */
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+
+.status-badge.scheduled {
+  background-color: #4caf50; /* Green */
+}
+
+.status-badge.completed {
+  background-color: #ff9800; /* Orange */
+}
+
+/* Empty state styling */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: white;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+/* New meeting form */
+.new-meeting-form {
+  background-color: rgba(30, 30, 47, 0.95); /* Darker semi-transparent background for form */
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.new-meeting-form h3 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.new-meeting-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.new-meeting-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for inputs */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 4px;
+}
+
+.new-meeting-form button {
+  background-color: #007bff; /* Blue button color */
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.new-meeting-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+app-footer {
+  background-color: rgba(30, 30, 47, 0.9);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Add Button */
+.add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333; /* Dark grey background */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 20px; /* Spacing inside the button */
+  font-size: 16px; /* Adjust the font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.add-button:hover {
+  background-color: #444; /* Slightly lighter grey on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.add-button:active {
+  background-color: #555; /* Darker grey for active state */
+  transform: scale(0.95); /* Slightly reduce size on click */
+}
+
+.add-button i {
+  margin-right: 8px; /* Space between the icon and text */
+  font-size: 18px; /* Adjust icon size */
+}
+
+.add-button p {
+  margin: 0;
+  font-weight: bold; /* Make text bold */
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
+}

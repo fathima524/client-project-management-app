@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000000; /* Black background */
+  color: #fff;               /* White text */
+  display: flex;
+  justify-content: center;   /* Center content horizontally */
+  align-items: center;       /* Center content vertically */
+  height: 100vh;             /* Full viewport height */
+}
+
+/* Login Container */
+.login-container {
+  display: flex;
+  justify-content: center;   /* Center the form inside the container */
+  align-items: center;       /* Center the form inside the container */
+  width: 100%; 
+  height: 100%;             /* Full height of the screen */
+}
+
+/* Login Form */
+.login-form {
+  background-color: #1a1a1a; /* Dark form background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;          /* Maximum width of the form */
+  font-size: 16px;
+  border: 1px solid #444;   /* Dark border around form */
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #00b4d8;            /* Reference accent color */
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label */
+.form-group label {
+  font-weight: bold;
+  font-size: 16px;
+  color: #ddd;               /* Light gray label text */
+}
+
+/* Input Fields */
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #444;   /* Dark border */
+  margin-top: 5px;
+  background-color: #2a2a2a; /* Dark input background */
+  color: #fff;               /* White text */
+  box-sizing: border-box;
+}
+
+/* Input Focus */
+.form-group input:focus {
+  outline: none;
+  border-color: #00b4d8;    /* Reference accent color on focus */
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00b4d8; /* Reference accent color */
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button Hover */
+button:hover {
+  background-color: #008ba3; /* Darker accent color on hover */
+}
+
+/* Links */
+.links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Link Style */
+.links a {
+  color: #00b4d8;            /* Accent color for links */
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Link Hover */
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Forgot Password and Register Links */
+.links .forgot-password,
+.links .register {
+  display: block;
+  margin-top: 10px;
+}

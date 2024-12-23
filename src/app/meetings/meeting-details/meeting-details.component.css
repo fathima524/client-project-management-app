@@ -1,0 +1,159 @@
+/* Meeting Details Component */
+.meeting-details {
+  background-color: #0a0a0a; /* Dark background */
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  color: #e0e0e0; /* Text color from the black and blue theme */
+}
+
+.detail-card {
+  background-color: #0f0f0f; /* Darker background for detail cards */
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #1a1a1a; /* Subtle border */
+}
+
+.detail-section {
+  margin-bottom: 2rem;
+}
+
+.detail-section h3 {
+  color: #808080; /* Muted gray for section headers */
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #1a1a1a; /* Divider below headers */
+  padding-bottom: 0.5rem;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 0.75rem;
+}
+
+.label {
+  width: 120px;
+  color: #808080; /* Label color for contrast */
+}
+
+.value {
+  color: #e0e0e0; /* Text color for values */
+}
+
+.description {
+  color: #cccccc; /* Light gray for descriptions */
+  line-height: 1.6;
+  background-color: #0a0a0a; /* Dark background */
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.participants-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.participant {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: #1a1a1a; /* Darker background for participants */
+  border-radius: 4px;
+  color: #e0e0e0; /* Text color */
+  border: 1px solid #262626; /* Subtle border for participant cards */
+}
+
+.participant i {
+  color: #00c3ff; /* Accent color for icons */
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #808080; /* Muted gray for loading text */
+}
+
+.loading i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00c3ff; /* Accent color for icons */
+}
+
+/* Actions Container */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #222; /* Dark background for actions */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  background-color: #333; /* Darker background for buttons */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.back-btn:hover {
+  background-color: #444; /* Darker hover effect */
+  transform: scale(1.05);
+}
+
+.back-btn:active {
+  background-color: #555; /* Active state background */
+  transform: scale(0.95);
+}
+
+.back-btn i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.right-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Cancel Button */
+.cancel-btn {
+  display: flex;
+  align-items: center;
+  background-color: #660000; /* Dark red background */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-left: 10px;
+}
+
+.cancel-btn:hover {
+  background-color: #990000; /* Darker red on hover */
+  transform: scale(1.05);
+}
+
+.cancel-btn:active {
+  background-color: #330000; /* Darkest red on active state */
+  transform: scale(0.95);
+}
+
+.cancel-btn i {
+  margin-right: 8px;
+  font-size: 16px;
+}

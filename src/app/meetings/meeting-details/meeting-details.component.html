@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="meeting-details">
+        <div class="header">
+            <h2>Meeting Details</h2>
+        </div>
+        
+        <div class="content" *ngIf="meeting; else loading">
+            <div class="detail-card">
+                <div class="detail-section">
+                    <h3>Basic Information</h3>
+                    <div class="detail-row">
+                        <span class="label">Title:</span>
+                        <span class="value">{{ meeting.title }}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Date & Time:</span>
+                        <span class="value">{{ meeting.date | date: 'MMM d, y, h:mm a' }}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Duration:</span>
+                        <span class="value">{{ meeting.duration }} minutes</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Status:</span>
+                        <span class="status-badge" [ngClass]="meeting.status.toLowerCase()">
+                            {{ meeting.status }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Description</h3>
+                    <p class="description">{{ meeting.description || 'No description provided' }}</p>
+                </div>
+
+                <div class="detail-section">
+                    <h3>Participants</h3>
+                    <div class="participants-list">
+                        <div class="participant" *ngFor="let participant of meeting.participants">
+                            <i class="fas fa-user"></i>
+                            <span>{{ participant }}</span>
+                        </div>
+                        <p *ngIf="!meeting.participants?.length">No participants added</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="back-btn" (click)="goBack()">
+                    <i class="fas fa-arrow-left"></i> Back to List
+                </button>
+                <div class="right-actions">
+                   
+                    <button class="cancel-btn" (click)="cancelMeeting()" *ngIf="meeting.status === 'Scheduled'">
+                        <i class="fas fa-times"></i> Cancel Meeting
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <ng-template #loading>
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading meeting details...</p>
+            </div>
+        </ng-template>
+    </div>
+</div>
+<app-footer></app-footer>

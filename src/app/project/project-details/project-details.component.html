@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<div class="project-details">
+    <h2>Project Details</h2>
+
+    <div>
+        <p><strong>Name:</strong> {{ project?.name }}</p>
+        <p><strong>Deadline:</strong> {{ project?.deadline }}</p>
+        <p><strong>Summary:</strong> {{ project?.summary }}</p>
+        <p><strong>Additional Details:</strong> {{ project?.additional_details }}</p>
+
+        <button (click)="goToEdit()">Edit Client</button>
+    </div>
+</div>
+<app-footer></app-footer>

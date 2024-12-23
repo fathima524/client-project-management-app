@@ -1,0 +1,221 @@
+/* Client Edit Container */
+.client-edit {
+  background: linear-gradient(145deg, rgba(42, 42, 59, 0.9), rgba(42, 42, 59, 0.7));
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 247, 255, 0.1);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.client-edit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f7ff, transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.client-edit:hover::before {
+  transform: translateX(100%);
+}
+
+/* Header Styling */
+.client-edit h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.client-edit h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f7ff, transparent);
+}
+
+/* Form Layout */
+.client-edit form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Form Group */
+.form-group {
+  position: relative;
+}
+
+/* Label Styling */
+.client-edit label {
+  display: block;
+  font-size: 1.1rem;
+  color: #e6e6f0;
+  margin-bottom: 8px;
+  text-shadow: 0 0 5px rgba(0, 247, 255, 0.3);
+}
+
+/* Input and Textarea Styles */
+.client-edit input,
+.client-edit textarea {
+  width: 100%;
+  background: rgba(30, 30, 47, 0.9);
+  border: 1px solid rgba(0, 247, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.client-edit input:focus,
+.client-edit textarea:focus {
+  border-color: #00f7ff;
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.1);
+  outline: none;
+  background: rgba(30, 30, 47, 0.95);
+}
+
+.client-edit textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button Container */
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Button Styles */
+.client-edit button {
+  background: linear-gradient(135deg, #00f7ff, #2e59d9);
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.client-edit button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 247, 255, 0.2);
+}
+
+.client-edit button:active {
+  transform: translateY(0);
+}
+
+/* Cancel Button */
+.client-edit button.cancel {
+  background: linear-gradient(135deg, #ff4d4d, #cc0000);
+}
+
+/* Loading State */
+.client-edit .loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #00f7ff;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+  margin: 20px 0;
+  font-style: italic;
+}
+
+/* Error Messages */
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  text-shadow: 0 0 5px rgba(255, 77, 77, 0.3);
+}
+
+/* Success Message */
+.success-message {
+  color: #00ff9d;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  text-shadow: 0 0 5px rgba(0, 255, 157, 0.3);
+}
+
+/* Optional Fields */
+.optional-field::after {
+  content: '(optional)';
+  font-size: 0.8rem;
+  color: #b3b3c1;
+  margin-left: 5px;
+}
+
+/* Required Fields */
+.required-field::after {
+  content: '*';
+  color: #ff4d4d;
+  margin-left: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .client-edit {
+      padding: 20px;
+      margin: 15px;
+  }
+
+  .client-edit h2 {
+      font-size: 2rem;
+  }
+
+  .client-edit form {
+      gap: 20px;
+  }
+
+  .button-group {
+      flex-direction: column;
+  }
+
+  .client-edit button {
+      width: 100%;
+  }
+}
+
+/* Animation for Form Submission */
+@keyframes submitPulse {
+  0% {
+      box-shadow: 0 0 0 0 rgba(0, 247, 255, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(0, 247, 255, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(0, 247, 255, 0);
+  }
+}
+
+.submitting button {
+  animation: submitPulse 1.5s infinite;
+}

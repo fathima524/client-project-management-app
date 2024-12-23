@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+
+    <div class="client-details" style="height: 500px; ">
+        <h2>Client Details</h2>
+        <div *ngIf="client">
+          <p><strong>Name:</strong> {{ client.name }}</p>
+          <p><strong>Contact:</strong> {{ client.contact }}</p>
+          <p><strong>Summary:</strong> {{ client.summary }}</p>
+          <p><strong>Additional Details:</strong> {{ client.additionalDetails }}</p><br><br>
+      
+          <button (click)="goToEdit()">Edit Client</button>
+        </div>
+        <div *ngIf="!client">
+          <p>Loading client details...</p>
+        </div>
+      </div>
+      
+<app-footer></app-footer>      

@@ -1,0 +1,53 @@
+<div id="app-root" style="background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92)), url('image1.jpg') no-repeat center center fixed; background-size: cover;">
+    <main>
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <h1>Anna's Dashboard</h1>
+                <p>Your one-stop overview for client and project management</p>
+            </div>
+            
+            <app-navbar></app-navbar>
+            
+            <div class="summary-cards" style="color: white;">
+                <div class="card">
+                    <h3>Total Clients</h3>
+                    <p>{{ totalClients }}</p>
+                </div>
+                <div class="card">
+                    <h3>Active Projects</h3>
+                    <p>{{ activeProjects }}</p>
+                </div>
+                <div class="card">
+                    <h3>Upcoming Meetings</h3>
+                    <p>{{ upcomingMeetings }}</p>
+                </div>
+            </div>
+            
+            <!-- Recent Activity and Quick Links -->
+            <div class="container-row">
+                <!-- Recent Activity Section -->
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <ul>
+                        <li>Client "ABC Corp" added new project</li>
+                        <li>Meeting with "XYZ Ltd" scheduled for tomorrow</li>
+                        <li>Client "DEF Inc" updated billing info</li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links Section -->
+                <div class="quick-links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a routerLink="/client/client-list">Clients</a></li>
+                        <li><a routerLink="/project/project-list">Projects</a></li>
+                        <li><a routerLink="/meetings/meeting-list">Meetings</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Router Outlet -->
+        </div>
+    </main>
+ </div>
+ <app-footer></app-footer>
